@@ -1,0 +1,232 @@
+#what {
+    .container {
+        max-width: 968px;
+        padding: 61px 0 37px;
+        overflow: visible;
+    }
+    h2 {
+        margin: 0 0 20px;
+        color: #4cb027;
+        @extend %fbol;
+        @extend %px32;
+        text-align: center;
+    }
+
+    .b-what-h-sub {
+        margin: 0 0 32px;
+        @extend %sreg;
+        @extend %px19;
+        line-height: 28px;
+        color: #313131;
+        text-align: center;
+    }
+
+    .b-what-gallery {
+        position: relative;
+        margin: 0 auto 43px;
+        height: 646px;
+        text-align: center;
+
+        .swiper-slide {
+            position: relative;
+            height: 646px;
+        }
+        img {
+            position: absolute;
+            bottom: 50%;
+            left: 0;
+            transform: translateY(50%);
+        }
+
+        .gallery-btn_prev,
+        .gallery-btn_next {
+            position: absolute;
+            top: 50%;
+            margin-top: -33px;
+            width: 66px;
+            height: 66px;
+            border-radius: 50%;
+            border: 1px solid #4cb027;
+            cursor: pointer;
+            z-index: 5;
+
+            &:after {
+                display: inline-block;
+                content: '';
+                width: .01%;
+                height: 66px;
+                background-color: transparent;
+                vertical-align: middle;
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+
+        .gallery-btn_prev {
+            left: -100px;
+            svg {
+                margin-left: 18px;
+            }
+        }
+        .gallery-btn_next {
+            right: -100px;
+            svg {
+                margin-left: 24px;
+            }
+        }
+        .swiper-button-disabled {
+            opacity: .5;
+        }
+        svg {
+            display: block;
+            vertical-align: middle;
+            margin: 16px;
+        }
+    }
+
+    .b-what-lists {
+        @extend %clearfix;
+        margin: 0 auto 43px;
+
+
+        .b-what-list_left {
+            float: left;
+        }
+        .b-what-list_right {
+            float: right;
+            padding-left: 15px;
+        }
+
+        .b-what-list {
+            width: 50%;
+        }
+
+        .b-what-list-item {
+            position: relative;
+            margin-bottom: 11px;
+            @extend %sreg;
+            @extend %px15;
+            line-height: 23px;
+            color: #666666;
+            letter-spacing: -.15px;
+            padding: 0 25px 0 29px;
+
+            &:before {
+                position: absolute;
+                left: 0;
+                top: 2px;
+                display: inline-block;
+                content: '';
+                background: url(../img/mark.svg) no-repeat;
+                width: 20px;
+                height: 16px;
+                margin-right: 5px;
+            }
+        }
+        .b-what-list-item:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    .b-what-expl {
+        @extend %sreg;
+        @extend %px15;
+        color: #a2a2a2;
+        line-height: 22.5px;
+        text-align: center;
+    }
+}
+
+@mixin media_768_what {
+
+    #what {
+        .container {
+            padding: 40px 0;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+
+        .b-what-h-sub {
+            padding: 0 20px;
+        }
+
+        .b-what-gallery {
+            height: 500px;
+            .swiper-container {
+                height: 500px;
+            }
+
+            .swiper-slide {
+                height: 500px;
+            }
+
+            .gallery-btn_prev {}
+        }
+
+        .b-what-lists {
+            padding: 0 30px;
+        }
+
+        .b-what-expl {
+            padding: 0 30px;
+        }
+    }
+}
+
+@mixin media_320_what {
+
+    #what {
+        h2 {
+            font-size: 1.429rem;
+        }
+
+        .b-what-h-sub {
+            font-size: 16px;
+            letter-spacing: -.5px;
+            line-height: 26px;
+            padding: 0 18px;
+        }
+
+        .b-what-gallery {
+            margin: 0 auto 25px;
+            height: 213px;
+            .swiper-container {
+                height: 213px;
+            }
+
+            .swiper-slide {
+                height: 213px;
+            }
+        }
+
+        .b-what-lists {
+            padding: 0 18px;
+
+            .b-what-list_left {
+                float: none;
+            }
+            .b-what-list_right {
+                float: none;
+                padding-left: 0px;
+            }
+
+            .b-what-list {
+                width: 100%;
+            }
+
+            .b-what-list-item {
+                max-width: 600px;
+                padding: 0 0 0 29px;
+                margin: 0 auto 15px;
+            }
+        }
+
+        .b-what-expl {
+            padding: 0 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+}

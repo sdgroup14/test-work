@@ -1,0 +1,159 @@
+@import "libs/_elements";
+@import "libs/_blank";
+@import "libs/_fsize";
+
+/*
+================================================================================
+|                                     reset                                     |
+================================================================================
+*/
+
+@import "libs/_reset";
+
+
+
+
+/*
+================================================================================
+|                                     Fonts                                    |
+================================================================================
+*/
+
+@import "libs/_fonts";
+
+
+
+
+/*
+================================================================================
+|                                     Start rools                              |
+================================================================================
+*/
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+body {
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+section,
+header {
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.content {
+    padding-top: 84px;
+}
+
+.container {
+    max-width: 1230px;
+    padding: 0 30px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.br768,
+.br320 {
+    display: none;
+}
+
+// MENU SECTION
+@import "content/menu";
+
+// HEADER SECTION
+@import "content/header";
+
+// ABOUT SECTION
+@import "content/index/about";
+
+// WHAT SECTION
+@import "content/index/what";
+
+// FOOTER SECTION
+@import "content/footer";
+
+
+@media screen and (max-width: 1220px) {
+    #what {
+        .b-what-gallery {
+            .gallery-btn_prev {
+                left: 15px;
+                border: 0;
+            }
+            .gallery-btn_next {
+                right: 15px;
+                border: 0;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    section,
+    nav {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+    .container {
+        max-width: 100%;
+    }
+
+    .br1024,
+    .br320 {
+        display: none;
+    }
+    .br768 {
+        display: block;
+    }
+    //MEDIA SECTIONS
+    @include media_768_header;
+    @include media_768_about;
+    @include media_768_what;
+    @include media_768_footer;
+}
+
+
+@media screen and (max-width: 768px) {
+    section,
+    nav {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+    }
+    .container {
+        min-width: 320px;
+        padding: 0 18px;
+    }
+    .content {
+        padding-top: 58px;
+    }
+    .br1024,
+    .br768,
+    .br768-1024 {
+        display: none;
+    }
+    .br320 {
+        display: block;
+    }
+
+    //MEDIA SECTIONS
+    @include media_320_navigation;
+    @include media_320_header;
+    @include media_320_about;
+    @include media_320_what;
+    @include media_320_footer;
+}

@@ -1,0 +1,123 @@
+header {
+    background: url(../img/header-bg.png) no-repeat 50% 0;
+    background-size: cover;
+    .container {
+        padding: 0 45px;
+    }
+    .b-header-content {
+        width: 50%;
+        padding: 112px 0 86px;
+    }
+    h1 {
+        @extend %fbol;
+        @extend %px28;
+        color: #4cb027;
+        margin-bottom: 32px;
+    }
+
+    .b-header-txt {
+        @extend %sreg;
+        @extend %px19;
+        color: #4e4e4e;
+        line-height: 26.5px;
+        padding-right: 65px;
+        margin: 0 0 27px;
+    }
+    .b-header-txt:last-of-type {
+        margin: 0;
+    }
+
+    .b-header-btns {
+        margin: 82px 0 0;
+        @extend %clearfix;
+
+        .b-header-btn {
+            display: block;
+            float: left;
+            line-height: 43px;
+            @extend %sbol;
+            text-transform: uppercase;
+            @extend %px15;
+            border: 1px solid #4cb027;
+            color: #4cb027;
+            padding: 0 15px;
+            border-radius: 2px;
+            transition: all .2s linear;
+
+            &:hover {
+                background-color: #4cb027;
+                color: #ffffff;
+            }
+        }
+
+        .b-header-btn_entry {
+            margin-left: 8px;
+            padding: 0 30px;
+        }
+        .b-header-btn_more {
+            margin-left: 36px;
+            padding: 0 19px;
+        }
+    }
+}
+
+@mixin media_768_header {
+    header {
+        background: none;
+        background-color: #d7eed6;
+        .b-header-content {
+            width: 100%;
+            padding: 70px 0;
+        }
+
+        .b-header-txt {
+            padding-right: 125px;
+        }
+
+
+        .b-header-btns {
+            margin: 52px 0 0;
+        }
+    }
+}
+
+@mixin media_320_header {
+
+    header {
+        background: none;
+        background-color: #d7eed6;
+        .container {
+            padding: 0 18px;
+            max-width: 480px;
+        }
+        .b-header-content {
+            width: 100%;
+            padding: 50px 0;
+        }
+        h1 {
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .b-header-txt {
+            font-size: 17px;
+            padding-right: 0;
+            text-align: center;
+            letter-spacing: -.5px;
+        }
+
+
+        .b-header-btns {
+            margin: 35px 0 0;
+
+            .b-header-btn {
+                float: none;
+                width: 280px;
+                margin: 0 auto 25px;
+            }
+            .b-header-btn_more {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

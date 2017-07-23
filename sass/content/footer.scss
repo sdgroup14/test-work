@@ -1,0 +1,31 @@
+footer {
+    height: 54px;
+    background-color: #4c4c4c;
+    .container {
+        max-width: 968px;
+
+        padding: 25px 0 0;
+    }
+    p {
+        @extend %sreg;
+        @extend %px12;
+        color: #ffffff;
+    }
+}
+
+@mixin media_768_footer {
+
+    footer {
+        .container {
+            padding: 25px 30px 0;
+        }
+    }
+}
+
+@mixin media_320_footer {
+    footer {
+        .container {
+            padding: 25px 18px 0;
+        }
+    }
+}
